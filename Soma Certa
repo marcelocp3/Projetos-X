@@ -1,0 +1,22 @@
+def SomaCerta(nums, target):
+    i = 0
+    j = 1
+    soma  = 0
+    resposta = []
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if i == j:
+                continue
+            else:
+                soma = nums[i] + nums[j]
+                if soma == target:
+                    resposta.append(i)
+                    resposta.append(j)
+                    break
+        if len(resposta) > 0:
+            break
+        
+    return resposta
+
+
+# Soma Certa deve receber uma lista como argumento nums e um inteiro target

@@ -1,0 +1,56 @@
+def SomaDoisNumeros(l1,l2):
+        i = 0
+        soma = 0
+        resposta = []
+        somar = 0
+        if len(l1) >= len(l2): 
+            for i in range(len(l1)):
+                if i >= len(l2):
+                    soma = l1[i] + somar
+                    if soma >= 10:
+                        resto = str(soma)
+                        somar = int(resto[0])
+                        adiciona = int(resto[1])
+                        resposta.append(adiciona)
+                    else:
+                        somar  = 0
+                        resposta.append(soma)
+                else:
+                    soma = l1[i] + l2[i] + somar
+                    if soma >= 10:
+                        resto = str(soma)
+                        somar = int(resto[0])
+                        adiciona = int(resto[1])
+                        resposta.append(adiciona)
+                    else:
+                        somar  = 0
+                        resposta.append(soma)
+        else:
+            for i in range(len(l2)):
+                if i >= len(l1):
+                    soma = l2[i] + somar
+                    if soma > 10:
+                        resto = str(soma)
+                        somar = int(resto[0])
+                        adiciona = int(resto[1])
+                        resposta.append(adiciona)
+                    else:
+                        somar  = 0
+                        resposta.append(soma)
+                else:
+                    soma = l1[i] + l2[i] + somar
+                    if soma >= 10:
+                        resto = str(soma)
+                        somar = int(resto[0])
+                        adiciona = int(resto[1])
+                        resposta.append(adiciona)
+                    else:
+                        somar  = 0
+                        resposta.append(soma)
+        
+        if somar != 0:
+            resposta.append(somar)
+        
+        return resposta
+
+# SomaDoisNumeros(l1,l2) Onde se l1 = [2,4,3] e l2 = [5,6,4] a resposta deve ser [7,0,8], já que 342 + 465 = 807

@@ -1,0 +1,20 @@
+class Solution:
+    def countSeniors(self, details: List[str]) -> int:
+        split = []
+        for detalhes in details:
+            subtrai = detalhes[11:13]
+            num = int(subtrai)
+            split.append(num)
+        
+        i = 0
+        idoso = 0
+        for i in range(len(split)):
+            if split[i] <= 60:
+                continue
+            if split[i] > 60:
+                idoso += 1
+        return idoso
+
+# CountSeniors deve receber uma lista de strings como argumento details
+# Cada string em details é um detalhe de uma pessoa, com a idade da pessoa na posição 11 e 12
+# CountSeniors deve retornar um inteiro com a quantidade de pessoas com mais de 60 anos
